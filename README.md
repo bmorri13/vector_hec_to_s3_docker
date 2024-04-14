@@ -15,7 +15,8 @@ Before you begin, ensure you have the following:
 Ensure that your working directory contains the following files:
 
 - `Dockerfile`
-- `vector/hec_to_s3.yaml` - Vector configuration file. - NOTE: replace the 'bucket' value before running
+- `vector/hec_to_s3.yaml`
+    - **NOTE**: replace the `bucket` value with the name of your bucket before building the container.
 
 ## Building the Docker Image
 
