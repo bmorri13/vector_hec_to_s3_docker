@@ -46,7 +46,7 @@ Ensure that your working directory contains the following files:
 Run the Docker container using the following command. Replace `your-access-key-id` and `your-secret-access-key` with your actual AWS credentials.
 
 ```bash
-docker run
+docker run \
   -p 8088:8088\
   -e S3_BUCKET_NAME='<REPLACE ME>'\
   -e VECTOR_ACCESS_KEY_ID='REDACTED'\
