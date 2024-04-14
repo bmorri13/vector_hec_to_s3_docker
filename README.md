@@ -15,7 +15,7 @@ Before you begin, ensure you have the following:
 Ensure that your working directory contains the following files:
 
 - `Dockerfile`
-- `vector/hec_to_s3.yaml` - Vector configuration file.
+- `vector/hec_to_s3.yaml` - Vector configuration file. - NOTE: replace the 'bucket' value before running
 
 ## Building the Docker Image
 
@@ -48,7 +48,6 @@ Run the Docker container using the following command. Replace `your-access-key-i
 ```bash
 docker run \
   -p 8088:8088\
-  -e S3_BUCKET_NAME='<REPLACE ME>'\
   -e VECTOR_ACCESS_KEY_ID='REDACTED'\
   -e VECTOR_SECRET_ACCESS_KEY='REDACTED'\
   vector_hec_to_s3
@@ -69,7 +68,7 @@ python random_hec_log_generator.py
 ## Troubleshooting
 ### To run the Docker Container for troubleshooting
 ```bash
-docker run -p 8088:8088 -e S3_BUCKET_NAME='<REPLACE ME>' -e VECTOR_ACCESS_KEY_ID='REDACTED' -e VECTOR_SECRET_ACCESS_KEY='REDACTED' -it --entrypoint /bin/sh vector_hec_to_s3
+docker run -p 8088:8088 -e VECTOR_ACCESS_KEY_ID='REDACTED' -e VECTOR_SECRET_ACCESS_KEY='REDACTED' -it --entrypoint /bin/sh vector_hec_to_s3
 
 ## Once in the container
 vector --verbose

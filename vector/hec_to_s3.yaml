@@ -11,7 +11,7 @@ sinks:
     type: "aws_s3"
     batch:
       timeout_secs: 30
-    bucket: "{{ S3_BUCKET_NAME }}" 
+    bucket: "< REPLACE_ME >" 
     region: "us-east-1"
     key_prefix: "bronze/{{ splunk_sourcetype }}/partitioned/year=%Y/month=%m/day=%d/hour=%H/minute=%M/"
     compression: "gzip"
