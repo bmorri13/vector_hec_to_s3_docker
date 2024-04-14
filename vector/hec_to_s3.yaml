@@ -1,0 +1,22 @@
+sources:
+  splunk_hec:
+    type: "splunk_hec"
+    valid_tokens: ["A94A8FE5CCB19BA61C4C08"]
+    address: "0.0.0.0:8088"
+
+sinks:
+  s3_sink:
+    inputs:
+      - "splunk_hec"
+    type: "aws_s3"
+    batch:
+      timeout_secs: 30
+    bucket: "{{ S3_BUCKET_NAME }}" 
+    region: "us-east-1"
+    key_prefix: "bronze/{{ splunk_sourcetype }}/partitioned/year=%Y/month=%m/day=%d/hour=%H/minute=%M/"
+    compression: "gzip"
+    encoding: 
+      codec: "native_json"
+    auth:
+      access_key_id: "${VECTOR_ACCESS_KEY_ID}"
+      secret_access_key: "${VECTOR_SECRET_ACCESS_KEY}"
