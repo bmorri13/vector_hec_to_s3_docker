@@ -60,6 +60,7 @@ For this example, we will be implementing the paritioning granularity to be down
 bronze/{{ splunk_sourcetype }}/partitioned/year=%Y/month=%m/day=%d/
 ```
 - This will have your data land into a bronze data tier with your sourcetype name that was sent to HEC and be included in the partitioned directory.
+    - Depending on your use case(s), you may need to adjust this accordingly to change your partitioned accordingly (ie.) make it more granular to hour / minute or even reduce the structure to be simpler.
 
 ## Testing HEC to S3 Logic
 ### Files
