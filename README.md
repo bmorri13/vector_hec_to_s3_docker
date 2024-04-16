@@ -54,6 +54,13 @@ docker run \
   vector_hec_to_s3
 ```
 
+## Data Partitioning
+For this example, we will be implementing the paritioning granularity to be down to the year and date format with the S3 key prfix below
+```
+bronze/{{ splunk_sourcetype }}/partitioned/year=%Y/month=%m/day=%d/
+```
+- This will have your data land into a bronze data tier with your sourcetype name that was sent to HEC and be included in the partitioned directory.
+
 ## Testing HEC to S3 Logic
 ### Files
 
