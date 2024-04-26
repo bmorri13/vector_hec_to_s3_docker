@@ -57,7 +57,7 @@ docker run \
 ## Data Partitioning
 For this example, we will be implementing the paritioning granularity to be down to the year and date format with the S3 key prfix below
 ```
-bronze/{{ splunk_sourcetype }}/partitioned/year=%Y/month=%m/day=%d/
+bronze/{{ splunk_sourcetype }}/partitioned/year=%Y/month=%m/day=%d/hour=%H
 ```
 - This will have your data land into a bronze data tier with your sourcetype name that was sent to HEC and be included in the partitioned directory.
     - Depending on your use case(s), you may need to adjust this accordingly to change your partitioned accordingly (ie.) make it more granular to hour / minute or even reduce the structure to be simpler.
